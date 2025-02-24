@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url('bg-mobile.jpg');
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url('moon-stars.svg');
+}
+
+body {
+    background-image: url('bg-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    height: 100vh;
+    animation: slideBackground 10s linear infinite, glowEffect 2s infinite alternate;
+    overflow: hidden; /* Impede que a barra de rolagem apareça */
+    opacity: 1;
+}
+
+.cabin-sketch-regular {
+    font-family: "Cabin Sketch", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .cabin-sketch-bold {
+    font-family: "Cabin Sketch", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+.Yuri_Geek{
+    font-family: "Cabin Sketch";
+
+  
+}
+
+@keyframes slideBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes glowEffect {
+    0% {
+        filter: brightness(100%); /* Brilho normal */
+    }
+    50% {
+        filter: brightness(200%); /* Explosão de brilho */
+    }
+    100% {
+        filter: brightness(100%); /* Retorna ao brilho normal */
+    }
+}
+
+/* Animação global de fade-in ao carregar */
+body {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+    height: 100%;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 56px auto 0px;
+    
+}
+
+/* Profile */
+#profile {
+    text-align: center;
+    padding: 24px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeUp 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#profile img {
+    width: 180px;
+    border-radius: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 7px white;
+    animation: neonGlow 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 5px white;
+    }
+    50% {
+        box-shadow: 0 0 15px white, 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px white;
+    }
+}
+
+/* Nome abaixo da imagem */
+#profile p {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 50px;
+    margin-top: 45px;
+}
+
+/* Links */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+/* Animação de entrada para os links */
+ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out 0.5s forwards;
+}
+
+ul li:nth-child(2) {
+    animation-delay: 0.6s;
+}
+ul li:nth-child(3) {
+    animation-delay: 0.7s;
+}
+ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border-radius: 8px;
+    border: 1px solid white;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--highlight-color);
+}
+
+/* Social Links */
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out 1s forwards;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Animação ao passar o mouse */
+#social-links a:hover {
+    background: var(--highlight-color);
+    padding: 16px;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px var(--highlight-color);
+}
+
+
+
+/* Footer */
+footer { background-color: rgba(0, 0, 0, 0.61);
+    width: 100%;
+    margin-top: 150px;
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out 1.2s forwards;
+}
