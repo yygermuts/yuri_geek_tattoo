@@ -203,65 +203,8 @@ footer {
     }
 }
 
-@media (width: 700px) {
-    #container {
-        overflow-y: hidden;
-    }
-
-    .swiper {
-        width: 50%; /* Ajusta a largura do Swiper para 50% em telas menores */
-    }
-}
-
-@media (min-width: 413px) and (max-width: 500px) {
-    #container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 12px 20px;
-        flex: 1;
-        gap: 39px;
-        overflow-y: hidden;
-    }
-
-    .swiper {
-        width: 45%;
-        height: 310px;
-    }
-
-    .swiper-horizontal>.swiper-pagination-bullets,
-    .swiper-pagination-bullets.swiper-pagination-horizontal,
-    .swiper-pagination-custom,
-    .swiper-pagination-fraction {
-        top: 82%;
-        left: 0;
-        width: 100%;
-    }
-}
-
-
-
-@media (min-width: 361px) and (max-width: 412px) {
-    #container {
-        overflow-y: hidden;
-    }
-
-    .swiper {
-        width: 45%;
-        height: 300px;
-    }
-
-    .swiper-horizontal>.swiper-pagination-bullets,
-    .swiper-pagination-bullets.swiper-pagination-horizontal,
-    .swiper-pagination-custom,
-    .swiper-pagination-fraction {
-        top: 86%;
-        left: 0;
-        width: 100%;
-    }
-}
-
-@media (width: 360px) {
+/* Responsividade */
+@media (max-width: 360px) {
     #container {
         overflow-y: hidden;
     }
@@ -277,6 +220,8 @@ footer {
     }
 
     .swiper {
+        max-width: 340px;
+        max-height: 250px;
         width: 38%;
         height: 250px;
     }
@@ -291,7 +236,7 @@ footer {
     }
 }
 
-@media (max-width: 412px) {
+@media (min-width: 361px) and (max-width: 389px) {
     #container {
         overflow-y: hidden;
     }
@@ -307,7 +252,9 @@ footer {
     }
 
     .swiper {
-        width: 38%;
+        max-width: 350px;
+        max-height: 175px;
+        width: 30%;
         height: 180px;
     }
 
@@ -321,18 +268,90 @@ footer {
     }
 }
 
+@media (min-width: 390px) and (max-width: 412px) {
+    #container {
+        overflow-y: hidden;
+    }
+
+    .Yuri_Geek {
+        font-size: 30px;
+    }
+
+    ul {
+        width: 45%;
+        margin-bottom: -16px;
+        margin-top: -35px;
+    }
+
+    .swiper {
+        max-width: 350px;
+        max-height: 300px;
+        width: 30%;
+        height: 250px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        top: 85%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+
+@media (min-width: 413px) and (max-width: 500px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 20px;
+        flex: 1;
+        gap: 39px;
+        overflow-y: hidden;
+    }
+
+    .swiper {
+        max-width: 350px;
+        max-height: 350px;
+        width: 45%;
+        height: 310px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        top: 82%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    #container {
+        overflow-y: hidden;
+    }
+
+    .swiper {
+        width: 50%;
+    }
+}
+
 @media (max-width: 900px) and (orientation: landscape) {
     body {
         overflow: scroll;
     }
 
     .swiper {
-        width: 70%; /* Aumenta a largura para melhor adaptação */
-        height: 200px; /* Ajusta a altura */
+        width: 70%;
+        height: 200px;
     }
 
     .Yuri_Geek {
-        font-size: 28px; /* Mantém um tamanho legível */
+        font-size: 28px;
     }
 
     ul {
@@ -349,23 +368,5 @@ footer {
     }
 }
 
-@media (min-width: 390px) and (max-width: 431px) {
-    #container {
-        overflow-y: hidden;
-        gap: 40px;
-    }
 
-    .swiper {
-        width: 45%;
-        height: 300px;
-    }
 
-    .swiper-horizontal>.swiper-pagination-bullets,
-    .swiper-pagination-bullets.swiper-pagination-horizontal,
-    .swiper-pagination-custom,
-    .swiper-pagination-fraction {
-        top: 86%;
-        left: 0;
-        width: 100%;
-    }
-}
