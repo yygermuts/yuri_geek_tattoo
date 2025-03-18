@@ -20,11 +20,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 12px 20px 12px 20px;
-    flex: 1; /* Faz o container crescer para ocupar o espaço disponível */
+    padding: 12px 20px;
+    flex: 1;
     gap: 20px;
-    overflow: hidden;
-    overflow-y:hidden; /* Permite rolagem interna se o conteúdo for muito grande */
+    overflow-y: hidden;
 }
 
 #profile {
@@ -100,16 +99,12 @@ ul li a:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-
-
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
-
 
 .swiper-slide:hover img {
     transform: scale(1.5);
@@ -123,30 +118,34 @@ ul li a:hover {
     border-radius: 50%;
     transition: all 0.3s ease;
 }
-.swiper-button-next, .swiper-button-prev {
+
+.swiper-button-next,
+.swiper-button-prev {
     position: absolute;
-    top: var(--swiper-navigation-top-offset, 72%);
-    width: calc(var(--swiper-navigation-size) / 44* 27);
+    top: 72%;
+    width: calc(var(--swiper-navigation-size) / 44 * 27);
     height: var(--swiper-navigation-size);
-    margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
     z-index: 10;
     cursor: pointer;
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: var(--swiper-pagination-bottom, 8px);
-    top: var(--swiper-pagination-top, 88%);
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 8px;
+    top: 88%;
     left: 0;
     width: 100%;
 }
 
 footer {
-    margin-top: auto; /* Cola o footer no final */
+    margin-top: auto;
     padding: 13px;
     background: rgba(0, 0, 0, 0.8);
     width: 100%;
@@ -154,59 +153,37 @@ footer {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    flex-shrink: 0; /* Impede que o footer encolha */
+    flex-shrink: 0;
 }
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 
 /* Responsividade */
 
+/* Para dispositivos grandes */
 @media (width: 1024px) {
     #container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 12px 20px;
-        flex: 1;
+        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: scroll;
         gap: 150px;
-        overflow-y: hidden;
     }
 
     #profile img {
         width: 300px;
         height: 300px;
-        border-radius: 50%;
-        border: 2px solid white;
-        object-fit: cover;
-        margin-bottom: 15px;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        transition: transform 0.3s;
     }
 
     .swiper {
-        width: 100%;
         max-width: 950px;
         height: 417px;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
 }
 
-/* Responsividade */
+/* Para telas muito pequenas (360px) */
 @media (max-width: 360px) {
     #container {
         overflow-y: hidden;
+        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .Yuri_Geek {
@@ -215,14 +192,11 @@ footer {
 
     ul {
         width: 45%;
-        margin-bottom: -16px;
         margin-top: -35px;
     }
 
     .swiper {
         max-width: 340px;
-        max-height: 250px;
-        width: 38%;
         height: 250px;
     }
 
@@ -231,14 +205,44 @@ footer {
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
         top: 85%;
-        left: 0;
-        width: 100%;
     }
 }
 
+@media (width: 360px) {
+    #container {
+        overflow-y: hidden;
+        overflow-x: hidden;
+        overflow: hidden;
+    }
+
+    .Yuri_Geek {
+        font-size: 30px;
+    }
+
+    ul {
+        width: 45%;
+        margin-top: -35px;
+    }
+
+    .swiper {
+        max-width: 340px;
+        max-height: 240px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        top: 85%;
+    }
+}
+
+/* Para dispositivos de 361px a 389px */
 @media (min-width: 361px) and (max-width: 389px) {
     #container {
         overflow-y: hidden;
+        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .Yuri_Geek {
@@ -247,15 +251,12 @@ footer {
 
     ul {
         width: 45%;
-        margin-bottom: -16px;
         margin-top: -35px;
     }
 
     .swiper {
         max-width: 350px;
-        max-height: 175px;
-        width: 30%;
-        height: 180px;
+        max-height: 130px;
     }
 
     .swiper-horizontal>.swiper-pagination-bullets,
@@ -263,14 +264,15 @@ footer {
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
         top: 85%;
-        left: 0;
-        width: 100%;
     }
 }
 
+/* Para dispositivos de 390px a 412px */
 @media (min-width: 390px) and (max-width: 412px) {
     #container {
         overflow-y: hidden;
+        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .Yuri_Geek {
@@ -279,44 +281,30 @@ footer {
 
     ul {
         width: 45%;
-        margin-bottom: -16px;
         margin-top: -35px;
     }
 
     .swiper {
         max-width: 350px;
-        max-height: 300px;
-        width: 30%;
-        height: 250px;
+        height: 200px;
     }
 
     .swiper-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-        top: 85%;
-        left: 0;
-        width: 100%;
+        top: 90%;
     }
 }
 
-
-
+/* Para dispositivos de 413px a 500px */
 @media (min-width: 413px) and (max-width: 500px) {
     #container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 12px 20px;
-        flex: 1;
         gap: 39px;
-        overflow-y: hidden;
     }
 
     .swiper {
         max-width: 350px;
-        max-height: 350px;
-        width: 45%;
         height: 310px;
     }
 
@@ -325,11 +313,10 @@ footer {
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
         top: 82%;
-        left: 0;
-        width: 100%;
     }
 }
 
+/* Para dispositivos de 700px (modo landscape) */
 @media (width: 700px) {
     #container {
         overflow-y: hidden;
@@ -341,6 +328,7 @@ footer {
     }
 }
 
+/* Para dispositivos em landscape */
 @media (max-width: 900px) and (orientation: landscape) {
     body {
         overflow: scroll;
@@ -357,7 +345,6 @@ footer {
 
     ul {
         width: 50%;
-        margin-bottom: -10px;
         margin-top: -20px;
     }
 
@@ -368,6 +355,3 @@ footer {
         top: 160%;
     }
 }
-
-
-
